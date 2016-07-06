@@ -1,0 +1,92 @@
+ #m-login{
+	position: fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	background-color: rgba(0,0,0,.5);
+	text-align: center;
+	z-index: 10;
+ }
+ .login-align, .login{
+	display:inline-block;
+	vertical-align: baseline;
+	zoom:1;
+	*display:inline;
+	*vertical-align: auto;
+	vertical-align: middle;
+ }
+ .login-align{
+ 	width:1px;
+ 	height:100%;
+ 	line-height: 100%;
+ }
+.login{
+	width:384px;
+	height:288px;
+	background-color: #fff;
+}
+.login-head{
+	margin-left:40px;
+}
+.login-head h3{
+	float:left;
+	font-size:18px;
+	line-height: 28px;
+	color:#444;
+	margin:20px 0;
+}
+.login-head img{
+	float:right;
+	width:10px;
+	height:10px;
+	margin:5px;
+}
+.login-head .spanSt{
+	outline:1px solid red;
+	width:160px;
+	height:28px;
+	text-align: center;
+	font-size:10px;
+	color:red;
+	display:inline-block;
+	border-radius: 5px;
+	margin-top: 20px;
+	line-height: 28px;
+}
+.login-body{
+	margin-left:40px;
+}
+.login p{
+	width:293px;
+	height:48px;
+	border:1px solid #ccc;
+	box-shadow: inset 1px 1px 1px #ccc;
+	margin-bottom:15px;
+	background-color: #fafafa;
+}
+.login p label{
+	font-size:16px;
+	color:#ccc;
+	line-height: 48px;
+}
+.login p input{
+	width:230px;
+	border:none;
+	padding-left: 10px;
+	font-size:16px;
+}
+.login .login-body div{
+	width:293px;
+	height:46px;
+	margin-top:20px;
+	background:url(../images/buttonColor.png) no-repeat;
+	box-shadow: 2px 2px  2px #ccc;
+ 	font-size:16px;
+	color:#fff;
+	cursor: pointer;
+	text-align: center;
+	line-height: 46px;
+	letter-spacing: 5px;
+}
+
