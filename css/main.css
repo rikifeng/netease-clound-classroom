@@ -370,7 +370,7 @@ article{
 	color:#000;
 	cursor: pointer;
 }
-.pageNav span:hover{
+.pageNav span:hover{:;
 	color:#fff;
  	background-color: #9dd8b1;
  }
@@ -426,7 +426,7 @@ article{
  .orgIntroduce .videoImg .videoIcon{
  	position: absolute;
  	left:50%;
- 	top:50%;
+ 	top:60%;
  	-webkit-transform:translate(-50%,-50%);
  	-ms-transform:translate(-50%,-50%);
  	-o-transform:translate(-50%,-50%);

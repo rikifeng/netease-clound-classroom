@@ -87,16 +87,8 @@
 			</ul>
 			<div class="coursesCards">
 			</div>
-			<div class="pageNav">
-					<i class ="pageflip prev"></i>
-					<span data-name ="first" class ="page-active">1</span>
-					<span>2</span>
-					<span>3</span>
-					<span>4</span>
-					<span data-name ="last">5</span>
-					<b>...</b>
-					<span></span>
-					<i class ="pageflip next"></i>
+			<div class = "pagewrap">
+
 			</div>
 		</div> <!-- /leftcourseTab -->
 		<div id="rightList">
@@ -210,7 +202,14 @@
 		// 直接跳到第二页
 		slider.nav(2)
  </script>
- <script type="text/javascript" src ="./js/courses.js"></script>
+ <script type="text/javascript" src ="./js/courseTwo.js"></script>
+ <script>
+ 		var course = new Course({
+ 			container:document.getElementById('leftcoursesTab').querySelector('.coursesCards'),
+ 			optionJ:{psize:20,type:10,pageNo:1}
+ 		});
+
+ </script>
  <script type ="text/javascript" src ="./js/animate.js"></script>
  <script type="text/javascript" src ="./js/modalVideo.js"></script>
  <script>

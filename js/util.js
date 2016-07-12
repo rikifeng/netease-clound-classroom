@@ -54,7 +54,7 @@ var util = (function(){
       }
     },
     getAjax:function(url, qs, callback) {
-      if (qs !== 'undefined'&& typeof qs != 'function') {
+      if (qs !== 'undefined'&& typeof qs !== 'function') {
         var pairs = [];
         for (var name in qs) {
           if (!qs.hasOwnProperty(name)) continue;
