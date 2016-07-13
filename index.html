@@ -101,9 +101,9 @@
 			</div><!-- orgIntroduce -->
 			<div class="lastHot">
 				<h4>最热排行</h4>
-					<div class="hot">
+				<div class="hotList">
 
-					</div>
+				</div>
 			</div> <!-- /lasthot -->
 		</div>
 	</article> <!-- /article -->
@@ -202,11 +202,16 @@
 		// 直接跳到第二页
 		slider.nav(2)
  </script>
+ <script type="text/javascript" src ="./js/hotHandle.js"></script>
  <script type="text/javascript" src ="./js/courseTwo.js"></script>
  <script>
  		var course = new Course({
  			container:document.getElementById('leftcoursesTab').querySelector('.coursesCards'),
  			optionJ:{psize:20,type:10,pageNo:1}
+ 		});
+ 		var hotContainer = document.getElementsByClassName('lastHot')[0].children[1];
+ 		var hotList = new hotList({
+ 			container:hotContainer
  		});
 
  </script>

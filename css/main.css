@@ -387,6 +387,7 @@ article{
 	height:20px;
 	background-image: url(../images/icon.png);
 	background-repeat: no-repeat;
+	cursor: pointer;
 }
 .pageNav .prev{
 	background-position: left 0 top -85px;
@@ -443,20 +444,20 @@ article{
  	height:778px;
  	border:1px solid #ccc;
  }
- .hotCase{
+ .hotList .hotCase{
  	margin:20px;
  }
- .lastHot .hot img{
+ .hotList .hotCase img{
  	float:left;
  	width:50px;
  	height:50px;
  }
-  .lastHot .hotInfo{
+  .hotList .hotInfo{
   	width:115px;
   	float:right;
   	margin-left:10px;
   }
- .lastHot .hotInfo p:first-child{
+ .hotList .hotInfo p:first-child{
 		white-space:nowrap;
 		text-overflow: ellipsis;
 		overflow: hidden;
