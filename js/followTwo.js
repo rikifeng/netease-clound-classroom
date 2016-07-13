@@ -19,7 +19,7 @@
 		return container.children[0];
 	};
 	function Follow(opt){
-		_.extend(this.opt);
+		_.extend(this,opt);
 		this.container = opt.container;
 		this.login = this._layout.cloneNode(true);
 		this.wrap=this.login.querySelector('.login');
@@ -32,7 +32,7 @@
 		_layout:html2node(template),
 		isLogin:function(){
 			var cookie = _.getCookie();
- 		if(cookie.loginSuc && cookie.loginSuc === '1'){
+ 		if(cookie.loginSuc === '1'){
 				this.focusOn();
 			}else{
 				this.showLog();
@@ -40,23 +40,20 @@
 		},
 		focusOn:function(){
  			var url ='http://study.163.com/webDev/attention.htm';
+ 			var that = this;
  			_.getAjax(url,function(data){
 				if(data === 1){
 					_.setCookie('followSuc',1);
+					that._close.bind(this);
+					var fol = _.$$('fol');
+					fol.innerHTML = '';
+					fol.className = "fixClass";
+					var html = '<ul><li>关注</li><li>取消</li></ul>'
+					fol.innerHTML = html;
+					fol.dataset.name = '1';
 				}
 			});
-			var b = _.getCookie();
-			if (b[' followSuc'] === '1') {
-				var fol = _.$$('fol');
-				fol.innerHTML = '';
-				fol.className = "fixClass";
-				var html = '<ul><li>关注</li><li>取消</li></ul>'
-				fol.innerHTML = html;
-				fol.dataset.name = '1';
-			}
-
-  },
-
+		},
 		showLog:function(){
 			this.container.appendChild(this.login);
 		},
@@ -76,10 +73,13 @@
 			var url ='http://study.163.com/webDev/login.htm';
  			var username = md5(this.login.querySelector('#username').value);
 			var psw = md5(this.login.querySelector('#psw').value);
- 			_.getAjax(url,{userName:username,password:psw},function(data){
-				if(data === 1){
- 						 _.setCookie('loginSuc',1);
+ 			_.getAjax(url,{userName:username,password:psw},this._checkHandle.bind(this));
+ 		},
+ 		_checkHandle:function(data){
+ 				if(data === 1){
+ 					_.setCookie('loginSuc',1);
  						_.remove(document.body,document.getElementById('m-login'));
+ 						this.focusOn.bind(this);
  				}else{
  					var span = document.createElement('span');
  					var head = _.$$('m-login').querySelector('.login-head');
@@ -89,10 +89,7 @@
 						head.appendChild(span);
 					}
  				}
-			});
-			var a = _.getCookie();
- 			if(a.loginSuc ==='1'){this.focusOn();}
- 		},
+ 		}
 	});
 	_.extend(Follow.prototype,_.emitter);
 	window.Follow = Follow;

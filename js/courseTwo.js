@@ -57,7 +57,7 @@
 		pageHandle:function(data){
 			this.pageCon.innerHTML = '';
 			this.pageCon.appendChild(this._layoutPage);
- 			var span = this.pageCon.querySelectorAll('span');
+ 			var span = this.pageCon.firstChild.querySelectorAll('span');
 			var pageNo = parseInt(this.options.pageNo);
 	 			if(pageNo <= 2){
 					span[0].textContent = pageNo;
