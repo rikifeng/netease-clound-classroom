@@ -105,7 +105,11 @@
 				_.getAjax(this.courseUrl,this.options,this._render.bind(this))
 			}
 			if(ev.target.dataset.index == '2'){
+<<<<<<< HEAD
 				if(curentPage.textContent === '30')return;
+=======
+				if(curentPage === '30')return;
+>>>>>>> master
 				this.options.pageNo += 1;
 				_.getAjax(this.courseUrl,this.options,this._render.bind(this))
 			}
